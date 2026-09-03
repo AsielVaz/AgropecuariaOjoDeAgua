@@ -1,0 +1,124 @@
+[30-May-2024 20:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura819913N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-May-2024 20:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-May-2024 20:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[04-Jun-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura331078N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[04-Jun-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[04-Jun-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Jun-2024 18:40:22 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura835217N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Jun-2024 18:40:22 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Jun-2024 18:40:22 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Jun-2024 20:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura699255N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Jun-2024 20:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Jun-2024 20:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Jun-2024 23:45:26 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura133251N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Jun-2024 23:45:26 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Jun-2024 23:45:26 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[21-Jun-2024 00:00:03 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura915140N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[21-Jun-2024 00:00:03 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[21-Jun-2024 00:00:03 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[22-Jun-2024 00:05:06 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura403171N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[22-Jun-2024 00:05:06 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[22-Jun-2024 00:05:06 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[16-Jul-2024 00:00:07 UTC] PHP Warning:  imap_open(): Couldn't open stream {mail.sistema16.com:993/imap/ssl/novalidate-cert}INBOX in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaXml.php on line 9
+[18-Jul-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura375744N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[18-Jul-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[18-Jul-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[18-Jul-2024 19:25:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura222848N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[18-Jul-2024 19:25:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[18-Jul-2024 19:25:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[22-Jul-2024 17:05:03 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura215255N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[22-Jul-2024 17:05:03 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[22-Jul-2024 17:05:03 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[25-Jul-2024 22:20:01 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura981896N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[25-Jul-2024 22:20:01 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[25-Jul-2024 22:20:01 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Jul-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura998345N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Jul-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Jul-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[01-Aug-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura641339N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[01-Aug-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[01-Aug-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[05-Aug-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura626028N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[05-Aug-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[05-Aug-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[06-Aug-2024 15:25:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura832088N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[06-Aug-2024 15:25:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[06-Aug-2024 15:25:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[09-Aug-2024 15:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura532061N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[09-Aug-2024 15:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[09-Aug-2024 15:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[09-Aug-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura736051N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[09-Aug-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[09-Aug-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[10-Aug-2024 18:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura530434N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[10-Aug-2024 18:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[10-Aug-2024 18:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Aug-2024 16:25:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura708581N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Aug-2024 16:25:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Aug-2024 16:25:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[19-Aug-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura345550N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[19-Aug-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[19-Aug-2024 19:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[20-Aug-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura602415N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[20-Aug-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[20-Aug-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[21-Aug-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura777152N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[21-Aug-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[21-Aug-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[23-Aug-2024 18:25:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura202746N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[23-Aug-2024 18:25:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[23-Aug-2024 18:25:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[26-Aug-2024 17:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura737046N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[26-Aug-2024 17:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[26-Aug-2024 17:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 19:40:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura776534N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 19:40:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 19:40:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 23:25:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura229479N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 23:25:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 23:25:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 23:25:06 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura379280N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 23:25:06 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[29-Aug-2024 23:25:06 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 17:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura235775N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 17:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 17:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 22:45:03 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura824903N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 22:45:03 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 22:45:03 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 22:45:07 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura502205N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 22:45:07 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Aug-2024 22:45:07 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[02-Sep-2024 17:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura115807N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[02-Sep-2024 17:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[02-Sep-2024 17:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[05-Sep-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura347729N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[05-Sep-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[05-Sep-2024 22:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[10-Sep-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura290541N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[10-Sep-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[10-Sep-2024 16:45:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Sep-2024 18:05:01 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura919407N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Sep-2024 18:05:01 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Sep-2024 18:05:01 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Sep-2024 18:05:05 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura783818N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Sep-2024 18:05:05 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[12-Sep-2024 18:05:05 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Sep-2024 17:25:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura378546N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Sep-2024 17:25:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[17-Sep-2024 17:25:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[19-Sep-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura838986N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[19-Sep-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[19-Sep-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[20-Sep-2024 00:05:03 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura908277N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[20-Sep-2024 00:05:03 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[20-Sep-2024 00:05:03 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[23-Sep-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura846111N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[23-Sep-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[23-Sep-2024 18:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[25-Sep-2024 00:05:02 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura763306N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[25-Sep-2024 00:05:02 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[25-Sep-2024 00:05:02 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Sep-2024 17:25:03 UTC] PHP Warning:  simplexml_load_file(): /home/iohanes/agropecuariaojodeagua.com/admin/xml/factura601568N.xml:1: parser error : Document is empty in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Sep-2024 17:25:03 UTC] PHP Warning:  simplexml_load_file():  in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
+[30-Sep-2024 17:25:03 UTC] PHP Warning:  simplexml_load_file(): ^ in /home/iohanes/agropecuariaojodeagua.com/admin/api/scriptIngresaFactura.php on line 85
