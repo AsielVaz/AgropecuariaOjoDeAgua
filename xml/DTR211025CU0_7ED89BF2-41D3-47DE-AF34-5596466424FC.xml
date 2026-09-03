@@ -3,7 +3,7 @@
   <cfdi:Emisor Nombre="NALDUR COMMERCE MEXICO" RegimenFiscal="601" Rfc="NCM180130I75" />
   <cfdi:Receptor DomicilioFiscalReceptor="45239" Nombre="DELMENT TRADING" RegimenFiscalReceptor="601" Rfc="DTR211025CU0" UsoCFDI="G03" />
   <cfdi:Conceptos>
-    <cfdi:Concepto Cantidad="100" ClaveProdServ="30102005" ClaveUnidad="H87" Descripcion="LÃ¡mina de acero inoxidable (Lamina De Acero Inoxidable Calibre 18 De 100x30 CM.)" Importe="78051.31" ObjetoImp="02" ValorUnitario="780.51">
+    <cfdi:Concepto Cantidad="100" ClaveProdServ="30102005" ClaveUnidad="H87" Descripcion="Lámina de acero inoxidable (Lamina De Acero Inoxidable Calibre 18 De 100x30 CM.)" Importe="78051.31" ObjetoImp="02" ValorUnitario="780.51">
       <cfdi:Impuestos>
         <cfdi:Traslados>
           <cfdi:Traslado Base="78051.31" Importe="12488.209600" Impuesto="002" TasaOCuota="0.160000" TipoFactor="Tasa" />
