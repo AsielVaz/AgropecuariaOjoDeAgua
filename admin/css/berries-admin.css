@@ -109,6 +109,9 @@ svg {
     right: 0;
     left: var(--sidebar-width);
     z-index: 1020;
+    box-sizing: border-box;
+    width: auto !important;
+    min-width: 0;
     max-width: none !important;
     height: var(--header-height);
     padding: 14px 28px 10px;
@@ -117,6 +120,7 @@ svg {
 
 .berry-navbar {
     display: flex;
+    min-width: 0;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -138,10 +142,13 @@ svg {
 }
 
 .berry-navbar__left {
+    min-width: 0;
+    flex: 1 1 auto;
     gap: 13px;
 }
 
 .berry-navbar__right {
+    flex: 0 0 auto;
     gap: 16px;
 }
 
@@ -182,6 +189,7 @@ svg {
 
 .berry-page-heading {
     display: flex;
+    min-width: 0;
     flex-direction: column;
     line-height: 1.15;
 }
@@ -196,9 +204,13 @@ svg {
 }
 
 .berry-page-heading strong {
+    display: block;
+    overflow: hidden;
     color: var(--leaf-900);
     font-size: 16px;
     font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .berry-season-status {
