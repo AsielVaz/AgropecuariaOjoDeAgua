@@ -128,38 +128,14 @@ class AdministradorUsuario extends conector
   }
 
   public function validarContrasena($id){
-    $usuario = new Usuario();
-    $sql = 'SELECT `id`, `nombre`, `appat`, `apmat`, `email`, `fecha_nac`, `password`, `usuario`, `tipo`, `dependencia`, `area`, `cliente`, `esclavo`, `esclavo_padre`, `razon_social`, `empresa_asignada`, `2fa`, `codigo_ver`, `imagen`, `telefono`, `calle`, `ciudad`, `pais`, `direccion`, `permiso` FROM `usuarios` WHERE id = ' . $id . ';';
-    $result = $this->ejecutar($sql);
-   
-    if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
+    $result = $this->ejecutarPreparado(
+      'SELECT password FROM usuarios WHERE id = ? LIMIT 1',
+      'i',
+      $id
+    );
+    $row = $result->fetch_assoc();
 
-        $usuario->id = $row['id'];
-        $usuario->nombre = $row['nombre'];
-        $usuario->apellidoPaterno = $row['appat'];
-        $usuario->apellidoMaterno = $row['apmat'];
-        $usuario->email = $row['email'];
-        $usuario->constrasena = $row['password'];
-        $usuario->telefono = $row['telefono'];
-        $usuario->calle = $row['calle'];
-        $usuario->ciudad = $row['ciudad'];
-        $usuario->pais = $row['pais'];
-        $usuario->direccion = $row['direccion'];
-        $usuario->tipoUsuario = $row['tipo'];
-        $usuario->permisos = explode(",", $row['permiso']);
-        $usuario->usuario = $row['usuario'];
-        $usuario->fa = $row['2fa'];
-        $usuario->accion = '';
-        $usuario->imagen = $row['imagen'];
-      }
-      return $usuario->constrasena;
-    } else {
-      return $usuario->constrasena;
-    }
-
-    //print_r(json_encode($arregloProductos));
-    return  $usuario->constrasena;
+    return $row['password'] ?? null;
   }
   
   public function insertaRecuperacion($idUsuario, $token, $fecha)
@@ -208,77 +184,66 @@ class AdministradorUsuario extends conector
 
   public function dameUsuarioSuper($email, $pass)
   {
-
     $usuario = new Usuario();
-    $sql = 'SELECT *
-    FROM usuarios
-    WHERE email = "' . $email . '" and password ="' . (sha1(md5(sha1($email . $pass)))) . '" and (tipo = "supercapturista" or tipo = "administrador"or tipo = "administrador_b");';
-    //echo $sql;
-    $result = $this->ejecutar($sql);
-    if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        $usuario->id = $row['id'];
-        $usuario->imagen = $row['imagen'];
-        $usuario->nombre = $row['nombre'];
-        $usuario->apellidoPaterno = $row['apellido_paterno'];
-        $usuario->apellidoMaterno = $row['apellido_materno'];
-        $usuario->email = $row['email'];
-        $usuario->constrasena = $row['password'];
-        $usuario->telefono = $row['telefono'];
-        $usuario->calle = $row['calle'];
-        $usuario->ciudad = $row['ciudad'];
-        $usuario->pais = $row['pais'];
-        $usuario->direccion = $row['direccion'];
-        $usuario->tipoUsuario = $row['tipo'];
-        $usuario->permisos = $row['permiso'];
-        $usuario->clienteId = $row['cliente'];
-        $usuario->usuario = $row['usuario'];
-        $usuario->imagen = $row['imagen'];
-      }
-      return $usuario;
-    } else {
-      return $usuario;
+    $password = sha1(md5(sha1($email . $pass)));
+    $result = $this->ejecutarPreparado(
+      'SELECT id, nombre, appat, apmat, email, password, usuario, tipo, cliente, `2fa`, imagen
+       FROM usuarios
+       WHERE email = ? AND password = ?
+         AND tipo IN ("supercapturista", "administrador", "administrador_b")
+       LIMIT 1',
+      'ss',
+      $email,
+      $password
+    );
+    $row = $result->fetch_assoc();
+
+    if ($row) {
+      $usuario->id = (int) $row['id'];
+      $usuario->nombre = $row['nombre'];
+      $usuario->apellidoPaterno = $row['appat'];
+      $usuario->apellidoMaterno = $row['apmat'];
+      $usuario->email = $row['email'];
+      $usuario->constrasena = $row['password'];
+      $usuario->tipoUsuario = $row['tipo'];
+      $usuario->clienteId = $row['cliente'];
+      $usuario->usuario = $row['usuario'];
+      $usuario->fa = $row['2fa'];
+      $usuario->imagen = $row['imagen'];
     }
 
-    //print_r(json_encode($arregloProductos));
     return $usuario;
   }
 
   public function dameUsuario($email, $pass)
   {
-
     $usuario = new Usuario();
-    $sql = 'SELECT *
-    FROM usuarios
-    WHERE email = "' . $email . '" and password ="' . (sha1(md5(sha1($email . $pass)))) . '";';
-    //echo $sql;
-    $result = $this->ejecutar($sql);
-    if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        $usuario->id = $row['id'];
-        $usuario->imagen = $row['imagen'];
-        $usuario->nombre = $row['nombre'];
-        $usuario->apellidoPaterno = $row['apellido_paterno'];
-        $usuario->apellidoMaterno = $row['apellido_materno'];
-        $usuario->email = $row['email'];
-        $usuario->constrasena = $row['password'];
-        $usuario->telefono = $row['telefono'];
-        $usuario->calle = $row['calle'];
-        $usuario->ciudad = $row['ciudad'];
-        $usuario->pais = $row['pais'];
-        $usuario->direccion = $row['direccion'];
-        $usuario->tipoUsuario = $row['tipo'];
-        $usuario->permisos = $row['permiso'];
-        $usuario->clienteId = $row['cliente'];
-        $usuario->usuario = $row['usuario'];
-        $usuario->fa = $row['2fa'];
-      }
-      return $usuario;
-    } else {
-      return $usuario;
+    $password = sha1(md5(sha1($email . $pass)));
+    $result = $this->ejecutarPreparado(
+      'SELECT id, nombre, appat, apmat, email, password, usuario, tipo, cliente, `2fa`, imagen
+       FROM usuarios
+       WHERE email = ? AND password = ?
+       LIMIT 1',
+      'ss',
+      $email,
+      $password
+    );
+    $row = $result->fetch_assoc();
+
+    if ($row) {
+      $usuario->id = (int) $row['id'];
+      $usuario->nombre = $row['nombre'];
+      $usuario->apellidoPaterno = $row['appat'];
+      $usuario->apellidoMaterno = $row['apmat'];
+      $usuario->email = $row['email'];
+      $usuario->constrasena = $row['password'];
+      $usuario->tipoUsuario = $row['tipo'];
+      $usuario->clienteId = $row['cliente'];
+      $usuario->usuario = $row['usuario'];
+      $usuario->fa = $row['2fa'];
+      $usuario->imagen = $row['imagen'];
     }
 
-    //print_r(json_encode($arregloProductos));
     return $usuario;
   }
 
@@ -290,8 +255,14 @@ class AdministradorUsuario extends conector
   public function dameUsuarioId($id)
   {
     $usuario = new Usuario();
-    $sql = 'SELECT `id`, `nombre`, `appat`, `apmat`, `email`, `fecha_nac`, `password`, `usuario`, `tipo`, `dependencia`, `area`, `cliente`, `esclavo`, `esclavo_padre`, `razon_social`, `empresa_asignada`, `2fa`, `codigo_ver`, `imagen`  FROM `usuarios` WHERE id = ' . $id . ';';
-    $result = $this->ejecutar($sql);
+    $result = $this->ejecutarPreparado(
+      'SELECT id, nombre, appat, apmat, email, password, usuario, tipo, cliente, `2fa`, imagen
+       FROM usuarios
+       WHERE id = ?
+       LIMIT 1',
+      'i',
+      $id
+    );
    
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
@@ -302,13 +273,9 @@ class AdministradorUsuario extends conector
         $usuario->apellidoMaterno = $row['apmat'];
         $usuario->email = $row['email'];
         $usuario->constrasena = $row['password'];
-        $usuario->telefono = $row['telefono'];
-        $usuario->calle = $row['calle'];
-        $usuario->ciudad = $row['ciudad'];
-        $usuario->pais = $row['pais'];
-        $usuario->direccion = $row['direccion'];
         $usuario->tipoUsuario = $row['tipo'];
-        $usuario->permisos = explode(",", $row['permiso']);
+        $usuario->clienteId = $row['cliente'];
+        $usuario->permisos = [];
         $usuario->usuario = $row['usuario'];
         $usuario->fa = $row['2fa'];
         $usuario->accion = '';
@@ -362,8 +329,8 @@ class AdministradorUsuario extends conector
   function dameUsuarios()
   {
     $arregloUsuarios = array();
-    $sql = 'SELECT *
-    FROM usuarios order by id asc;';
+    $sql = 'SELECT id, nombre, appat, apmat, email, password, usuario, tipo, cliente, `2fa`, imagen
+    FROM usuarios ORDER BY id ASC;';
     $result = $this->ejecutar($sql);
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
@@ -374,14 +341,12 @@ class AdministradorUsuario extends conector
         $usuario->apellidoPaterno = $row['appat'];
         $usuario->apellidoMaterno = $row['apmat'];
         $usuario->email = $row['email'];
-        $usuario->constrasena = $row['contrasena'];
-        $usuario->telefono = $row['telefono'];
-        $usuario->calle = $row['calle'];
-        $usuario->ciudad = $row['ciudad'];
-        $usuario->pais = $row['pais'];
-        $usuario->direccion = $row['direccion'];
+        $usuario->constrasena = $row['password'];
         $usuario->tipoUsuario = $row['tipo'];
-        $usuario->permisos = explode(",", $row['permiso']);
+        $usuario->clienteId = $row['cliente'];
+        $usuario->usuario = $row['usuario'];
+        $usuario->fa = $row['2fa'];
+        $usuario->permisos = [];
         $usuario->accion = '';
         $arregloUsuarios[] = $usuario;
       }

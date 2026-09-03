@@ -27,19 +27,34 @@ class AdministradorProveedores extends conector {
 
 
     public function agregarProveedor($rfc, $nombre, $correo, $direccion, $periodo_pago){
-        $query = "INSERT INTO `proveedores` (`correo`, `rfc`, `periodo_dias`, `nombre`, `direccion`) VALUES ( '$correo', '$rfc', '$periodo_pago', '$nombre', '$direccion')";
-        $this->ejecutar($query);
+        return $this->ejecutarPreparado(
+            "INSERT INTO proveedores (correo, rfc, periodo_dias, nombre, direccion) VALUES (?, ?, ?, ?, ?)",
+            'ssiss',
+            $correo,
+            $rfc,
+            $periodo_pago,
+            $nombre,
+            $direccion
+        );
     }
     public function modificarProveedor($rfc, $nombre, $correo, $direccion, $periodo_pago,$id){
-        $query="UPDATE iohanes_ojo.proveedores
-        SET correo='$correo', rfc='$rfc', periodo_dias='$periodo_pago', nombre='$nombre', direccion='$direccion'
-        WHERE id=$id;";
-        $this->ejecutar($query);
+        return $this->ejecutarPreparado(
+            "UPDATE proveedores
+             SET correo = ?, rfc = ?, periodo_dias = ?, nombre = ?, direccion = ?
+             WHERE id = ?",
+            'ssissi',
+            $correo,
+            $rfc,
+            $periodo_pago,
+            $nombre,
+            $direccion,
+            $id
+        );
 
     }
 
     public function dameProveedores(){
-        $query = "SELECT `id`, `correo`, `rfc`, `periodo_dias`, `nombre`, `direccion` FROM `proveedores` WHERE 1";
+        $query = "SELECT id, correo, rfc, periodo_dias, nombre, direccion FROM proveedores";
         $result = $this->ejecutar($query);
         $proveedores = array();
         while($row = $result->fetch_assoc()) {
@@ -51,16 +66,15 @@ class AdministradorProveedores extends conector {
 
 
     public function dameProveedor($id){
-        $query = "SELECT `id`, `correo`, `rfc`, `periodo_dias`, `nombre`, `direccion` FROM `proveedores` WHERE id = $id";
-        $result = $this->ejecutar($query);
+        $query = "SELECT id, correo, rfc, periodo_dias, nombre, direccion
+                  FROM proveedores WHERE id = ? LIMIT 1";
+        $result = $this->ejecutarPreparado($query, 'i', $id);
         $row = $result->fetch_assoc();
         $proveedor = new Proveedor($row["id"], $row["correo"], $row["rfc"], $row["periodo_dias"], $row["nombre"], $row["direccion"]);
         return $proveedor;
     }
     public function eliminarProvedor($id){
-        $query="DELETE FROM iohanes_ojo.proveedores
-        WHERE id=$id;";
-        $result =  $this->ejecutar($query);
+        return $this->ejecutarPreparado("DELETE FROM proveedores WHERE id = ?", 'i', $id);
         
 
     }

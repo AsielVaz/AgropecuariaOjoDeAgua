@@ -1,7 +1,7 @@
-<?php 
-session_start();
-include_once "adminEvidencias.php";
-include_once "adminFacturas.php";
+<?php
+require_once dirname(__DIR__) . '/session.php';
+require_once __DIR__ . '/adminEvidencias.php';
+require_once __DIR__ . '/adminFacturas.php';
 
 include "notificador.php";
 

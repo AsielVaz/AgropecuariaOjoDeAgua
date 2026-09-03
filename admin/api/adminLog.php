@@ -15,7 +15,7 @@ class LogFactura{
 
 class AdministradorLog extends conector{
     public function dameLog(){
-        $query = "SELECT * FROM log_facturas";
+        $query = "SELECT id, correo, fecha, mensaje FROM log_facturas";
         $resultado = $this->ejecutar($query);
         $logs = array();
         while($fila = $resultado->fetch_assoc()){

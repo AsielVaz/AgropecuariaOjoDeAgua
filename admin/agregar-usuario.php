@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/auth.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +35,7 @@
     <!--  END LOADER -->
     <?php include_once 'api/adminUsuarios.php';
     $adminUsuarios=new AdministradorUsuario();
+    $usuariomodi = new Usuario();
     if(isset($_GET['id'])){
         $usuariomodi=$adminUsuarios->dameUsuarioId($_GET['id']);
         $editando=1;

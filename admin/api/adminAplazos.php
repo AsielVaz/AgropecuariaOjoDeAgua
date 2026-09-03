@@ -17,7 +17,8 @@ class Aplazo {
 class AdministradorAplazos extends conector {
 
     public function dameAplazos(){
-        $query = "SELECT * FROM aplazo_de_factura";
+        $query = "SELECT id, id_factura, plazo_anterior, plazo_posterior, usuario_inserta, fecha_inserta
+                  FROM aplazo_de_factura";
         $result = $this->ejecutar($query);
         $aplazos = array();
         while ($row = $result->fetch_assoc()) {
@@ -34,8 +35,9 @@ class AdministradorAplazos extends conector {
     }
 
     public function dameAplazo($id){
-        $query = "SELECT * FROM aplazo_de_factura WHERE id = $id";
-        $result = $this->ejecutar($query);
+        $query = "SELECT id, id_factura, plazo_anterior, plazo_posterior, usuario_inserta, fecha_inserta
+                  FROM aplazo_de_factura WHERE id = ? LIMIT 1";
+        $result = $this->ejecutarPreparado($query, 'i', $id);
         $row = $result->fetch_assoc();
         $aplazo = new Aplazo();
         $aplazo->id = $row['id'];

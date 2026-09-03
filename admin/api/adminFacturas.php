@@ -27,6 +27,9 @@ class Factura
 
 class AdministradorFacturas extends conector
 {
+    private $totalEstaSemana = null;
+    private $totalProgramado = null;
+
     private function columnasFactura()
     {
         return 'f.id, f.id_provedor, f.folio_fiscal, f.serie, f.folio,
@@ -103,7 +106,7 @@ class AdministradorFacturas extends conector
     {
         $limite = date('Y-m-d', strtotime('next sunday'));
 
-        return $this->obtenerFacturas(
+        $facturas = $this->obtenerFacturas(
             $this->consultaBase() . '
             WHERE f.eliminado = 0
               AND f.fecha_vencimiento > ?
@@ -115,6 +118,9 @@ class AdministradorFacturas extends conector
             's',
             $limite
         );
+        $this->totalProgramado = array_sum(array_column($facturas, 'total_con_iva'));
+
+        return $facturas;
     }
 
     public function dameFacturasVencidas()
@@ -139,7 +145,7 @@ class AdministradorFacturas extends conector
     {
         $limite = date('Y-m-d', strtotime('next sunday'));
 
-        return $this->obtenerFacturas(
+        $facturas = $this->obtenerFacturas(
             $this->consultaBase() . '
             WHERE f.eliminado = 0
               AND f.fecha_vencimiento <= ?
@@ -151,10 +157,17 @@ class AdministradorFacturas extends conector
             's',
             $limite
         );
+        $this->totalEstaSemana = array_sum(array_column($facturas, 'total_con_iva'));
+
+        return $facturas;
     }
 
     public function sumaFacturasEstaSemana()
     {
+        if ($this->totalEstaSemana !== null) {
+            return (float) $this->totalEstaSemana;
+        }
+
         $limite = date('Y-m-d', strtotime('next sunday'));
         $result = $this->ejecutarPreparado(
             'SELECT COALESCE(SUM(f.total_con_iva), 0) AS total
@@ -176,6 +189,10 @@ class AdministradorFacturas extends conector
 
     public function sumaTodo()
     {
+        if ($this->totalProgramado !== null) {
+            return (float) $this->totalProgramado;
+        }
+
         $limite = date('Y-m-d', strtotime('next sunday'));
         $result = $this->ejecutarPreparado(
             'SELECT COALESCE(SUM(f.total_con_iva), 0) AS total

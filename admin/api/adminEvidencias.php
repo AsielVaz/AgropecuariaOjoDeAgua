@@ -27,14 +27,12 @@ class AdministradorEvidencias extends conector{
 
 
     public function dameEvidencias(){
-        $query = "SELECT factura_evidencia.*, xml_ingresados.ruta_pdf as ruta_fac, factura.total_con_iva, proveedores.nombre, proveedores.rfc  FROM factura_evidencia
-        left join factura
-        on factura.id = factura_evidencia.id_factura
-        left join proveedores 
-        on proveedores.id = factura.id_provedor
-        left join xml_ingresados
-        on xml_ingresados.id = factura.id_ingreso_xml
-        GROUP by factura_evidencia.id;";
+        $query = "SELECT fe.id, fe.id_factura, fe.url, fe.fecha_ingresa, fe.usuario_ingresa,
+            x.ruta_pdf AS ruta_fac, f.total_con_iva, p.nombre, p.rfc
+        FROM factura_evidencia fe
+        LEFT JOIN factura f ON f.id = fe.id_factura
+        LEFT JOIN proveedores p ON p.id = f.id_provedor
+        LEFT JOIN xml_ingresados x ON x.id = f.id_ingreso_xml";
         $resultado = $this->ejecutar($query);
         $evidencias = array();
         while($fila = $resultado->fetch_assoc()){
@@ -50,8 +48,12 @@ class AdministradorEvidencias extends conector{
     }
 
     public function dameEvidenciasFac($id_factura){
-        $query = "SELECT * FROM factura_evidencia WHERE id_factura = $id_factura";
-        $resultado = $this->ejecutar($query);
+        $resultado = $this->ejecutarPreparado(
+            "SELECT id, id_factura, url, fecha_ingresa, usuario_ingresa
+             FROM factura_evidencia WHERE id_factura = ?",
+            'i',
+            $id_factura
+        );
         $evidencias = array();
         while($fila = $resultado->fetch_assoc()){
             $evidencia = new Evidencia($fila["id"], $fila["id_factura"], $fila["url"], $fila["fecha_ingresa"], $fila["usuario_ingresa"]);
@@ -61,22 +63,34 @@ class AdministradorEvidencias extends conector{
     }
 
     public function dameEvidencia($id){
-        $query = "SELECT * FROM factura_evidencia WHERE id = $id";
-        $resultado = $this->ejecutar($query);
+        $resultado = $this->ejecutarPreparado(
+            "SELECT id, id_factura, url, fecha_ingresa, usuario_ingresa
+             FROM factura_evidencia WHERE id = ? LIMIT 1",
+            'i',
+            $id
+        );
         $fila = $resultado->fetch_assoc();
         $evidencia = new Evidencia($fila["id"], $fila["id_factura"], $fila["url"], $fila["fecha_ingresa"], $fila["usuario_ingresa"]);
         return $evidencia;
     }
 
     public function agregaEvidencia($id_factura, $url, $usuario_ingresa){
-        $query = "INSERT INTO factura_evidencia (id_factura, url, usuario_ingresa) VALUES ($id_factura, '$url', '$usuario_ingresa')";
-        $resultado = $this->ejecutar($query);
+        $resultado = $this->ejecutarPreparado(
+            "INSERT INTO factura_evidencia (id_factura, url, usuario_ingresa) VALUES (?, ?, ?)",
+            'isi',
+            $id_factura,
+            $url,
+            $usuario_ingresa
+        );
         return $resultado;
     }
 
     public function eliminaEvidencia($id){
-        $query = "DELETE FROM factura_evidencia WHERE id = $id";
-        $resultado = $this->ejecutar($query);
+        $resultado = $this->ejecutarPreparado(
+            "DELETE FROM factura_evidencia WHERE id = ?",
+            'i',
+            $id
+        );
         return $resultado;
     }
 

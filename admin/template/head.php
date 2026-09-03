@@ -1,16 +1,5 @@
 <?php
-if (session_status() !== PHP_SESSION_ACTIVE) {
-    session_start();
-}
-
-if (empty($_SESSION["usuario_id"])) {
-    if (!headers_sent()) {
-        header('Location: login.php');
-    } else {
-        echo "<script>window.location='login.php'</script>";
-    }
-    exit;
-}
+require_once dirname(__DIR__) . '/auth.php';
 
 include_once 'api/adminUsuarios.php';
 $adminUsuarios = new AdministradorUsuario();

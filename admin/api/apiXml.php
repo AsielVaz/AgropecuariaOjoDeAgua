@@ -17,7 +17,7 @@ class AdministradorXml extends conector{
 
 
     public function dameXmls(){
-        $query = "SELECT * FROM xml_ingresados";
+        $query = "SELECT id, ruta, ingresado, fecha_ingreso FROM xml_ingresados";
         $result = $this->ejecutar($query);
         $xmls = array();
         while($row = mysqli_fetch_array($result)){
@@ -32,8 +32,8 @@ class AdministradorXml extends conector{
     }
 
     public function dameXml($id){
-        $query = "SELECT * FROM xml_ingresados WHERE id = $id";
-        $result = $this->ejecutar($query);
+        $query = "SELECT id, ruta, ingresado, fecha_ingreso FROM xml_ingresados WHERE id = ? LIMIT 1";
+        $result = $this->ejecutarPreparado($query, 'i', $id);
         $xmls = array();
         while($row = mysqli_fetch_array($result)){
             $xml = new Xml();

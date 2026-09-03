@@ -18,15 +18,15 @@ class AdministradorPagos extends conector
 {
     public function agregaPago($id_factura, $monto, $metodo_pago, $fecha, $usuario_inserta)
     {
-        $query = "INSERT INTO iohanes_ojo.pagos
+        $query = "INSERT INTO pagos
         ( id_factura, monto, fecha, metodo_pago, usuario_inserta, fecha_inserta)
-        VALUES('$id_factura' , '$monto', '$fecha', '$metodo_pago', '$usuario_inserta', current_timestamp());";
-        $result =  $this->ejecutar($query);
+        VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP())";
+        return $this->ejecutarPreparado($query, 'idssi', $id_factura, $monto, $fecha, $metodo_pago, $usuario_inserta);
     }
 
     public function damePagos()
     {
-        $query = "SELECT * FROM pagos";
+        $query = "SELECT id, id_factura, monto, fecha, metodo_pago, usuario_inserta, fecha_inserta FROM pagos";
         $result =  $this->ejecutar($query);
         $pagos = array();
         while ($row = mysqli_fetch_array($result)) {
@@ -45,8 +45,9 @@ class AdministradorPagos extends conector
 
     public function damePago($id_pago)
     {
-        $query = "SELECT * FROM pagos WHERE id = $id_pago";
-        $result = $this->ejecutar($query);
+        $query = "SELECT id, id_factura, monto, fecha, metodo_pago, usuario_inserta, fecha_inserta
+                  FROM pagos WHERE id = ? LIMIT 1";
+        $result = $this->ejecutarPreparado($query, 'i', $id_pago);
         $pago = new Pago();
         while ($row = mysqli_fetch_array($result)) {
             $pago->id = $row['id'];
@@ -61,9 +62,7 @@ class AdministradorPagos extends conector
     }
 
     public function eliminarPago($id){
-        $query="DELETE FROM iohanes_ojo.pagos
-        WHERE id=$id;";
-        $result =  $this->ejecutar($query);
+        return $this->ejecutarPreparado("DELETE FROM pagos WHERE id = ?", 'i', $id);
         
 
     }

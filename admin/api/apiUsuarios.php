@@ -1,9 +1,11 @@
-<?php 
-include "adminUsuarios.php";
-session_start();
+<?php
+require_once dirname(__DIR__) . '/session.php';
+require_once __DIR__ . '/adminUsuarios.php';
+
+header('Content-Type: application/json; charset=utf-8');
 
 
-$accion = $_POST["accion"];
+$accion = $_POST['accion'] ?? '';
 
 
 $casoInicio = "inicio";
@@ -14,24 +16,25 @@ $casoEliminar = "eliminar";
 
 function iniciaSesion()
 {
-    $usuario = $_POST["usuario"];
-    $contrasena = $_POST["contrasena"];
+    $email = trim($_POST['usuario'] ?? '');
+    $contrasena = $_POST['contrasena'] ?? '';
     $adminUsuarios = new AdministradorUsuario();
-    $usuario = $adminUsuarios->dameUsuario($usuario, $contrasena);
+    $usuario = $adminUsuarios->dameUsuario($email, $contrasena);
     if($usuario->id != 0)
     {
-        $_SESSION["usuario"] = $usuario->usuario;
-        $_SESSION["admindif_admin_id"] = $usuario->admindif_admin_id;
-        $_SESSION["usuario_id"] = $usuario->id;
-        $_SESSION["tipo_usuario"] = $usuario->tipo_usuario;
-        $_SESSION["id_cliente_14"] = $usuario->id_cliente_14;
+        session_regenerate_id(true);
+        $_SESSION['usuario'] = $usuario->usuario ?: $usuario->email;
+        $_SESSION['usuario_id'] = (int) $usuario->id;
+        $_SESSION['tipo_usuario'] = $usuario->tipoUsuario;
+        $_SESSION['id_cliente_14'] = $usuario->clienteId;
 
-        $respuesta = array("estatus" => "exito", "mensaje" => "Bienvenido " . $usuario->usuario, "tipo" => $usuario->tipo_usuario);
+        $respuesta = array('estatus' => 'exito', 'mensaje' => 'Bienvenido ' . $usuario->nombre, 'tipo' => $usuario->tipoUsuario);
+        session_write_close();
     }
     else{
         $respuesta = array("estatus" => "error", "mensaje" => "Usuario o contraseña incorrectos");
     }
-    echo json_encode($respuesta);
+    echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
 }
 
 function agregarUsuario(){

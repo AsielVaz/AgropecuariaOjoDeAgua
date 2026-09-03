@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/auth.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,6 +36,7 @@
 
     <?php include_once 'api/adminProveedores.php';
     $adminProveedores = new AdministradorProveedores();
+    $proveedor = new Proveedor(null, '', '', '', '', '');
     if(isset($_GET['id'])){
         $proveedor=$adminProveedores->dameProveedor($_GET['id']);
         $editando=1;
