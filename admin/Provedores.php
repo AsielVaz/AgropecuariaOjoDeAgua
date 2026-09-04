@@ -36,7 +36,7 @@
 
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <link href="css/berries-admin.css?v=20260904-1" rel="stylesheet" type="text/css">
+    <link href="css/berries-admin.css?v=20260904-4" rel="stylesheet" type="text/css">
 </head>
 
 <body class="layout-boxed">

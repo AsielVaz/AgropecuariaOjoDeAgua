@@ -26,7 +26,7 @@
 
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <link href="css/berries-admin.css?v=20260904-1" rel="stylesheet" type="text/css">
+    <link href="css/berries-admin.css?v=20260904-4" rel="stylesheet" type="text/css">
 </head>
 
 <body class="layout-boxed">
@@ -72,8 +72,18 @@
                                     </div>
                                 </div>
                                 <?php include_once 'api/adminEvidencias.php';
+                                include_once 'template/pagination.php';
                                 $adminEvidencias = new AdministradorEvidencias();
-                                $evidencias = $adminEvidencias->dameEvidencias();
+                                $registrosPorPagina = 20;
+                                $paginaEvidencias = filter_input(INPUT_GET, 'pagina', FILTER_VALIDATE_INT);
+                                $paginaEvidencias = ($paginaEvidencias !== false && $paginaEvidencias !== null && $paginaEvidencias > 0)
+                                    ? $paginaEvidencias
+                                    : 1;
+                                $totalEvidencias = $adminEvidencias->contarEvidencias();
+                                $totalPaginasEvidencias = max(1, (int) ceil($totalEvidencias / $registrosPorPagina));
+                                $paginaEvidencias = min($paginaEvidencias, $totalPaginasEvidencias);
+                                $offsetEvidencias = ($paginaEvidencias - 1) * $registrosPorPagina;
+                                $evidencias = $adminEvidencias->dameEvidencias($registrosPorPagina, $offsetEvidencias);
 
                                 function acondicionarLink($link)
                                 {
@@ -142,7 +152,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 224px;">RFC factura</th>
                                                 <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 224px;">Monto factura</th>
                                                 <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 90px;">Fecha de pago</th>
-                                                <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="ujyu: activate to sort column ascending" style="width: 92px;">Acciones</th>
+                                                <th class="sorting invoice-actions-heading invoice-actions-heading--compact" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Acciones disponibles">Acciones</th>
 
                                             </tr>
                                         </thead>
@@ -160,8 +170,8 @@
 
 
                                                     <td><span class="inv-date"> <?php echo formatearFecha($evidencia->fecha_ingresa) ?> </span></td>
-                                                    <td class="text-center invoice-actions">
-                                                    
+                                                    <td class="text-center invoice-actions invoice-actions--compact">
+                                                    <div class="invoice-actions__row">
                                                     <a onclick="cargarFactura('<?php echo acondicionarLink($evidencia->linkFactura) ?>')" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" class="invoice-action invoice-action--view" title="Ver factura" aria-label="Ver factura" role="button">
                                                             <svg style="width: 24px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4 6-9 6s-9-4.8-9-6c0-1.2 4-6 9-6s9 4.8 9 6Z" />
@@ -195,6 +205,7 @@
                                                                 <line x1="14" y1="11" x2="14" y2="17"></line>
                                                             </svg>
                                                         </a> -->
+                                                    </div>
                                                        
                                                     </td>
                                                 </tr>
@@ -202,6 +213,12 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <?php renderBerryPagination(
+                                    $paginaEvidencias,
+                                    $totalPaginasEvidencias,
+                                    $totalEvidencias,
+                                    $registrosPorPagina
+                                ); ?>
 
                             </div>
                         </div>
@@ -276,22 +293,12 @@
     <script src="../src/plugins/src/table/datatable/datatables.js"></script>
     <script>
         $('#tabla-evidencia').DataTable({
-            "dom": "<'dt--top-section'<'row'<'col-12 col-sm-6 d-flex justify-content-sm-start justify-content-center'l><'col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-sm-0 mt-3'f>>>" +
-                "<'table-responsive'tr>" +
-                "<'dt--bottom-section d-sm-flex justify-content-sm-between text-center'<'dt--pages-count  mb-sm-0 mb-3'i><'dt--pagination'p>>",
-            "oLanguage": {
-                "oPaginate": {
-                    "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>',
-                    "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'
-                },
-                "sInfo": "Showing page _PAGE_ of _PAGES_",
-                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                "sSearchPlaceholder": "Search...",
-                "sLengthMenu": "Results :  _MENU_",
-            },
-            "stripeClasses": [],
-            "lengthMenu": [7, 10, 20, 50],
-            "pageLength": 10
+            "dom": "t",
+            "paging": false,
+            "info": false,
+            "searching": false,
+            "ordering": false,
+            "stripeClasses": []
         });
     </script>
 

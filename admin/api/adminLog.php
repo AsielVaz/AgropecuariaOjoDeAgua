@@ -14,9 +14,14 @@ class LogFactura{
 
 
 class AdministradorLog extends conector{
-    public function dameLog(){
-        $query = "SELECT id, correo, fecha, mensaje FROM log_facturas";
-        $resultado = $this->ejecutar($query);
+    public function dameLog($limite = 20, $offset = 0){
+        $limite = max(1, min(100, (int) $limite));
+        $offset = max(0, (int) $offset);
+        $query = "SELECT id, correo, fecha, mensaje
+                  FROM log_facturas
+                  ORDER BY id DESC
+                  LIMIT ? OFFSET ?";
+        $resultado = $this->ejecutarPreparado($query, 'ii', $limite, $offset);
         $logs = array();
         while($fila = $resultado->fetch_assoc()){
             $log = new LogFactura();
@@ -28,5 +33,11 @@ class AdministradorLog extends conector{
             array_push($logs, $log);
         }
         return $logs;
+    }
+
+    public function contarLogs(){
+        $resultado = $this->ejecutar("SELECT COUNT(*) AS total FROM log_facturas");
+        $fila = $resultado->fetch_assoc();
+        return (int) ($fila['total'] ?? 0);
     }
 }

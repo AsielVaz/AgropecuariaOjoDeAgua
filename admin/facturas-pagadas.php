@@ -22,7 +22,7 @@
 
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <link href="css/berries-admin.css?v=20260904-1" rel="stylesheet" type="text/css">
+    <link href="css/berries-admin.css?v=20260904-4" rel="stylesheet" type="text/css">
 </head>
 
 <body class="layout-boxed">
@@ -133,7 +133,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 23px;">Total con IVA</th>
                                                 <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 23px;">Fecha ingreso</th>
                                                 <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 23px;">Fecha vencimiento</th>
-                                                <th class="sorting" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="ujyu: activate to sort column ascending" style="width: 92px;">Acciones</th>
+                                                <th class="sorting invoice-actions-heading" tabindex="0" aria-controls="invoice-list" rowspan="1" colspan="1" aria-label="Acciones disponibles">Acciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -152,6 +152,7 @@
 
 
                                                     <td class="invoice-actions">
+                                                        <div class="invoice-actions__row">
                                                         <a href="agregar-pago.php?id=<?php echo $factura->id ?>" class="invoice-action invoice-action--pay" title="Registrar pago" aria-label="Registrar pago">
                                                             <svg style="width: 40px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17.3a5 5 0 0 0 2.6 1.7c2.2.6 4.5-.5 5-2.3.4-2-1.3-4-3.6-4.5-2.3-.6-4-2.7-3.5-4.5.5-1.9 2.7-3 5-2.3 1 .2 1.8.8 2.5 1.6m-3.9 12v2m0-18v2.2" />
@@ -177,6 +178,7 @@
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
                                                             </svg>
                                                         </a>
+                                                        </div>
 
 
                                                         <div class="modal fade bd-example-modal-xl<?php echo $factura->id ?>" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-modal="true" role="dialog">

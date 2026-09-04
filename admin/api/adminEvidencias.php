@@ -26,14 +26,22 @@ class Evidencia{
 class AdministradorEvidencias extends conector{
 
 
-    public function dameEvidencias(){
+    public function dameEvidencias($limite = 20, $offset = 0){
+        $limite = max(1, min(100, (int) $limite));
+        $offset = max(0, (int) $offset);
         $query = "SELECT fe.id, fe.id_factura, fe.url, fe.fecha_ingresa, fe.usuario_ingresa,
             x.ruta_pdf AS ruta_fac, f.total_con_iva, p.nombre, p.rfc
-        FROM factura_evidencia fe
+        FROM (
+            SELECT id, id_factura, url, fecha_ingresa, usuario_ingresa
+            FROM factura_evidencia
+            ORDER BY id DESC
+            LIMIT ? OFFSET ?
+        ) fe
         LEFT JOIN factura f ON f.id = fe.id_factura
         LEFT JOIN proveedores p ON p.id = f.id_provedor
-        LEFT JOIN xml_ingresados x ON x.id = f.id_ingreso_xml";
-        $resultado = $this->ejecutar($query);
+        LEFT JOIN xml_ingresados x ON x.id = f.id_ingreso_xml
+        ORDER BY fe.id DESC";
+        $resultado = $this->ejecutarPreparado($query, 'ii', $limite, $offset);
         $evidencias = array();
         while($fila = $resultado->fetch_assoc()){
             $evidencia = new Evidencia($fila["id"], $fila["id_factura"], $fila["url"], $fila["fecha_ingresa"], $fila["usuario_ingresa"]);
@@ -45,6 +53,12 @@ class AdministradorEvidencias extends conector{
            
         }
         return $evidencias;
+    }
+
+    public function contarEvidencias(){
+        $resultado = $this->ejecutar("SELECT COUNT(*) AS total FROM factura_evidencia");
+        $fila = $resultado->fetch_assoc();
+        return (int) ($fila['total'] ?? 0);
     }
 
     public function dameEvidenciasFac($id_factura){
