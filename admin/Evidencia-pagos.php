@@ -26,7 +26,7 @@
 
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <link href="css/berries-admin.css?v=20260903-4" rel="stylesheet" type="text/css">
+    <link href="css/berries-admin.css?v=20260904-1" rel="stylesheet" type="text/css">
 </head>
 
 <body class="layout-boxed">
@@ -160,9 +160,9 @@
 
 
                                                     <td><span class="inv-date"> <?php echo formatearFecha($evidencia->fecha_ingresa) ?> </span></td>
-                                                    <td class="text-center">
+                                                    <td class="text-center invoice-actions">
                                                     
-                                                    <a onclick="cargarFactura('<?php echo acondicionarLink($evidencia->linkFactura) ?>')" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl">
+                                                    <a onclick="cargarFactura('<?php echo acondicionarLink($evidencia->linkFactura) ?>')" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" class="invoice-action invoice-action--view" title="Ver factura" aria-label="Ver factura" role="button">
                                                             <svg style="width: 24px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4 6-9 6s-9-4.8-9-6c0-1.2 4-6 9-6s9 4.8 9 6Z" />
                                                                 <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -170,13 +170,13 @@
                                                         </a>
                                                     
                                                     
-                                                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cargaImagen('<?php echo acondicionarLink($evidencia->url) ?>')">
+                                                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cargaImagen('<?php echo acondicionarLink($evidencia->url) ?>')" class="invoice-action invoice-action--evidence" title="Ver evidencia" aria-label="Ver evidencia" role="button">
                                                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" style="width:24px;">
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17.3a5 5 0 0 0 2.6 1.7c2.2.6 4.5-.5 5-2.3.4-2-1.3-4-3.6-4.5-2.3-.6-4-2.7-3.5-4.5.5-1.9 2.7-3 5-2.3 1 .2 1.8.8 2.5 1.6m-3.9 12v2m0-18v2.2" />
                                                             </svg>
                                                         </a>
 
-                                                        <a onclick="reenviar(<?php echo $evidencia->id_factura ?>)">
+                                                        <a onclick="reenviar(<?php echo $evidencia->id_factura ?>)" class="invoice-action invoice-action--send" title="Reenviar notificación" aria-label="Reenviar notificación" role="button">
 
                                                             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" style="width: 24px;">
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.9 6c.4.3.8.3 1.2 0l7.9-6M4 19h16c.6 0 1-.4 1-1V6c0-.6-.4-1-1-1H4a1 1 0 0 0-1 1v12c0 .6.4 1 1 1Z" />

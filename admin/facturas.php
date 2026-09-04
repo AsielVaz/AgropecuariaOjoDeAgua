@@ -22,7 +22,7 @@
 
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <link href="css/berries-admin.css?v=20260903-4" rel="stylesheet" type="text/css">
+    <link href="css/berries-admin.css?v=20260904-1" rel="stylesheet" type="text/css">
 </head>
 
 <body class="layout-boxed">
@@ -188,28 +188,28 @@
                                                     <td><span class="inv-date"><?php echo formatearFecha($factura->fecha_pago) ?> </span></td>
 
 
-                                                    <td>
-                                                        <a href="agregar-pago.php?id=<?php echo $factura->id ?>">
+                                                    <td class="invoice-actions">
+                                                        <a href="agregar-pago.php?id=<?php echo $factura->id ?>" class="invoice-action invoice-action--pay" title="Registrar pago" aria-label="Registrar pago">
                                                             <svg style="width: 40px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17.3a5 5 0 0 0 2.6 1.7c2.2.6 4.5-.5 5-2.3.4-2-1.3-4-3.6-4.5-2.3-.6-4-2.7-3.5-4.5.5-1.9 2.7-3 5-2.3 1 .2 1.8.8 2.5 1.6m-3.9 12v2m0-18v2.2" />
                                                             </svg>
                                                         </a>
 
-                                                        <a onclick="cargarFactura('<?php echo acondicionarLink($factura->ruta_pdf) ?>')" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" href="<?php echo acondicionarLink($factura->ruta_pdf) ?>">
+                                                        <a onclick="cargarFactura('<?php echo acondicionarLink($factura->ruta_pdf) ?>')" data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl" href="<?php echo acondicionarLink($factura->ruta_pdf) ?>" class="invoice-action invoice-action--view" title="Ver factura" aria-label="Ver factura">
                                                             <svg style="width: 40px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4 6-9 6s-9-4.8-9-6c0-1.2 4-6 9-6s9 4.8 9 6Z" />
                                                                 <path stroke="currentColor" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                                             </svg>
                                                         </a>
 
-                                                        <a data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl<?php echo $factura->id ?>" href="<?php echo acondicionarLink($factura->ruta_pdf) ?>">
+                                                        <a data-bs-toggle="modal" data-bs-target=".bd-example-modal-xl<?php echo $factura->id ?>" href="<?php echo acondicionarLink($factura->ruta_pdf) ?>" class="invoice-action invoice-action--defer" title="Aplazar factura" aria-label="Aplazar factura">
                                                             <svg style="width: 40px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
                                                             </svg>
                                                         </a>
 
 
-                                                        <a onclick="eliminar('<?php echo ($factura->id) ?>')" class="elemento-con-pointer">
+                                                        <a onclick="eliminar('<?php echo ($factura->id) ?>')" class="invoice-action invoice-action--delete elemento-con-pointer" title="Eliminar factura" aria-label="Eliminar factura" role="button">
                                                             <svg style="width: 40px;" class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
                                                             </svg>
